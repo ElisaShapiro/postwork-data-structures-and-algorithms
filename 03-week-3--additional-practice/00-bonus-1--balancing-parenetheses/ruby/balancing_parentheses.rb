@@ -1,5 +1,18 @@
 def balancing_parentheses(string)
-  # type your code in here
+  openingP = 0
+  closingP = 0
+  string.chars.each do |char|
+    if char == '('
+      openingP += 1
+      next
+    end
+    if openingP > 0
+      openingP -= 1
+    else
+      closingP += 1
+    end
+  end
+  openingP + closingP
 end
 
 if __FILE__ == $PROGRAM_NAME
