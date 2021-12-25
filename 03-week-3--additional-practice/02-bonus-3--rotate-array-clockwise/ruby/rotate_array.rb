@@ -1,5 +1,7 @@
 def rotate_array(arr, k)
-  # type your code in here
+  number_of_rotations = k % arr.length
+  remaining = arr.slice!(arr.length - number_of_rotations, number_of_rotations)
+  remaining + arr
 end
 
 if __FILE__ == $PROGRAM_NAME
