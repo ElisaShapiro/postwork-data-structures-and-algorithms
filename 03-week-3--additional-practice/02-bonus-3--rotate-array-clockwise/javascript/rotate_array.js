@@ -1,5 +1,7 @@
 function rotateArray(arr, k) {
-  // type your code here
+  const numberOfRotations = k % arr.length
+  const remaining = arr.splice(arr.length - numberOfRotations, numberOfRotations)
+  return remaining.concat(arr)
 }
 
 if (require.main === module) {
