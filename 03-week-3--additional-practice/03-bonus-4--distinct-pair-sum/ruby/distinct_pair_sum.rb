@@ -1,5 +1,12 @@
 def distinct_pair_sum(arr, k)
-  # type your code in here
+  pairs = {}
+  (0...(arr.length - 1)).each do |index|
+    next_val = arr[index + 1]
+    if next_val + arr[index] == k && !pairs.key?(next_val) && !pairs.key?(arr[index])
+      pairs[arr[index]] = [arr[index], next_val]
+    end
+  end
+  pairs.values
 end
 
 if __FILE__ == $PROGRAM_NAME
